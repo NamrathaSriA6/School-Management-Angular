@@ -1,0 +1,77 @@
+<!-- Centered Popup -->
+<div *ngIf="popupMessage" class="popup-overlay">
+  <div class="popup-box" [ngClass]="popupType">
+    <p>{{ popupMessage }}</p>
+    <div class="popup-actions">
+      <button (click)="closePopup()">OK</button>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="attendance-container">
+  <div class="controls">
+    <!-- Month Selector -->
+    <input
+      type="month"
+      [(ngModel)]="selectedMonth"
+      (ngModelChange)="onMonthChange()"
+    />
+
+    <!-- Class Dropdown -->
+    <select [(ngModel)]="selectedClass">
+      <option value="">Select Class</option>
+      <option *ngFor="let cls of classes" [value]="cls">{{ cls }}</option>
+    </select>
+
+    <!-- Section Dropdown -->
+    <select [(ngModel)]="selectedSection">
+      <option value="">Select Section</option>
+      <option *ngFor="let sec of sections" [value]="sec">{{ sec }}</option>
+    </select>
+
+    <!-- Search Button -->
+    <button (click)="fetchTeachers()">Search</button>
+  </div>
+
+  <!-- Attendance Table -->
+  <div *ngIf="teachers.length > 0" class="table-wrapper">
+    <table class="attendance-table">
+      <thead>
+        <tr>
+          <!-- NOTE: no legacy sticky-col classes; use new col-* ones -->
+          <th class="col-id">Teacher ID</th>
+          <th class="col-name">Name</th>
+          <ng-container *ngFor="let day of days">
+            <th>{{ day }}</th>
+          </ng-container>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let teacher of teachers">
+          <td class="col-id">{{ teacher.teacherId }}</td>
+          <td class="col-name">
+            {{ teacher.firstName }} {{ teacher.lastName }}
+          </td>
+          <ng-container *ngFor="let day of days">
+            <td>
+              <div
+                class="attendance-cell"
+                [class.bg-green-500]="getAttendanceValue(teacher.teacherId, day) === true"
+                [class.bg-red-500]="getAttendanceValue(teacher.teacherId, day) === false"
+                [class.locked-cell]="!isToday(day)"
+                (click)="isToday(day) ? markAttendance(teacher.teacherId, day, false) : null"
+                (dblclick)="isToday(day) ? markAttendance(teacher.teacherId, day, true) : null"
+              ></div>
+            </td>
+          </ng-container>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="submit-btn-container">
+      <button class="submit-btn" (click)="submitAttendance()">Submit Attendance</button>
+    </div>
+  </div>
+</div>

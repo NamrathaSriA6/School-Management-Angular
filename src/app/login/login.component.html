@@ -1,0 +1,15 @@
+<div class="login-container">
+  <div class="login-card">
+    <h2 class="login-title">
+  Welcome! <br>
+  <small>Please Sign In to Your School Dashboard</small>
+</h2>
+
+    <p *ngIf="error" class="error-message">{{ error }}</p>
+
+    <input [(ngModel)]="email" placeholder="Email" class="login-input" />
+    <input [(ngModel)]="password" type="password" placeholder="Password" class="login-input" />
+
+    <button (click)="login()" class="login-button">Login</button>
+  </div>
+</div>

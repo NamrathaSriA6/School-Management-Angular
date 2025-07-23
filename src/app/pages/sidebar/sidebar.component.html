@@ -1,0 +1,44 @@
+<nav class="w-64 h-screen bg-gradient-to-br from-[#3498db] to-[#8e44ad] text-white fixed top-0 left-0 shadow-lg flex flex-col p-4">
+  <!-- Logo / Header -->
+  <div class="text-2xl font-extrabold mb-8 text-center text-white drop-shadow">Blooming Birds School</div>
+
+  <!-- Navigation Links -->
+  <ul class="space-y-2">
+    <li>
+      <a
+        routerLink="/pages/dashboard"
+        routerLinkActive="bg-white/20 font-semibold"
+        class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-white/10 transition"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path d="M3 13h8V3H3v10zM13 21h8v-8h-8v8zM13 3v8h8V3h-8zM3 21h8v-8H3v8z" />
+        </svg>
+        <span>Dashboard</span>
+      </a>
+    </li>
+    <li>
+      <a
+        routerLink="/pages/teachers"
+        routerLinkActive="bg-white/20 font-semibold"
+        class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-white/10 transition"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87m6-7a4 4 0 100-8 4 4 0 000 8zm6 4a4 4 0 11-8 0 4 4 0 018 0z" />
+        </svg>
+        <span>Teachers</span>
+      </a>
+    </li>
+    <li>
+      <a
+        routerLink="/pages/attendance"
+        routerLinkActive="bg-white/20 font-semibold"
+        class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-white/10 transition"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path d="M5 13l4 4L19 7" />
+        </svg>
+        <span>Attendance</span>
+      </a>
+    </li>
+  </ul>
+</nav>

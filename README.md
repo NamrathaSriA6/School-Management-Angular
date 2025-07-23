@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # School
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.15.
@@ -57,3 +58,7 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+=======
+# School-Management-Angular
+An Angular + Firebase-based school dashboard to view and manage attendance and related data. Features real-time updates, day-wise marking, and easy filtering by class and section.
+>>>>>>> 669881ac3b4bece556f3f083e44ab3b719217ce6
